@@ -1,0 +1,62 @@
+---
+title: Finding the features nobody used
+slug: carfax-analytics
+role: Data Product Analyst
+org: Carfax
+timeframe: Sept 2025 – Apr 2026
+teamSize: Cross-functional (product, eng, leadership)
+whatThisShows: Moving from measuring the product to deciding it
+cardProblem: Feature-level usage was invisible, so roadmap arguments were won by whoever argued hardest.
+tags: ["Product Analytics", "Prioritization", "ETL"]
+order: 3
+confidential: true
+metaDescription: Building the analytics layer that made feature-level usage visible at Carfax — and arguing for what the roadmap should do about it.
+phases:
+  - { label: "ETL pipelines", weight: 26, series: "neutral" }
+  - { label: "Instrumentation", weight: 24, series: "b" }
+  - { label: "Cohort analysis", weight: 22, series: "a" }
+  - { label: "Recommendation", weight: 28, series: "a" }
+---
+
+<Context>
+
+As Data Product Analyst I built the analytics layer underneath Carfax's product organization: ETL pipelines in Azure Synapse that turned raw data into trusted, analysis-ready datasets, running across 35B+ records from 260K+ sources. The visible output was four product dashboards — vehicle-valuation usage, browser-extension analytics, consumer analytics, and iOS value metrics.
+
+</Context>
+
+<Problem>
+
+Feature-level usage was invisible. Everyone knew the product was used; nobody could see which features actually carried it. So roadmap arguments were won by whoever argued hardest, and there was no evidence to justify killing a feature or doubling down on one. Prioritization was running on conviction, not data.
+
+</Problem>
+
+<WhatIDid>
+
+- Built **ETL pipelines in Azure Synapse** producing analysis-ready datasets the whole product org could work from, instead of one-off extracts.
+- Ran **large-scale analytics across 35B+ records and 260K+ sources** to surface genuine feature-level utilization, not vanity totals.
+- Used **cohort analysis** to connect usage to retention — tying what people did to whether they stayed, rather than just counting clicks.
+- Shipped **self-serve dashboards** that retired the ad-hoc request queue, so product managers could answer their own questions without waiting on me.
+
+</WhatIDid>
+
+<Decision>
+
+The finding was blunt: a small handful of features carried the majority of active usage, and much of the surface was dead weight. That forced a choice — invest in the few features that worked, or spend the same effort trying to fix the ones users had already ignored.
+
+<Rejected>Rejected: spreading engineering across the underused surface to "rescue" it.</Rejected>
+
+I argued to double down on the proven features. Users had already voted with their time; concentrating engineering where that signal was strongest returns faster than betting on features they'd walked past once already. Reviving a dead feature is a hypothesis — reinforcing a live one is a near-certainty.
+
+</Decision>
+
+<Outcome>
+
+The analysis moved prioritization from opinion to evidence and fed directly into roadmap decisions alongside the product managers — the bridge from measuring the product to helping shape what it does next.
+
+</Outcome>
+
+<Differently>
+
+I'd push to instrument features at ship time rather than reconstructing usage after the fact. Retrofitting analytics onto features that launched blind cost weeks a simple logging spec up front would have saved.
+
+</Differently>

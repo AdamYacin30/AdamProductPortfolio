@@ -1,0 +1,30 @@
+---
+title: "Teardown: why GitHub Copilot got the interface right"
+slug: copilot-teardown
+date: 2026-07-05
+excerpt: The constraint that makes an AI coding assistant useful isn't the model — it's where the suggestion appears.
+tags: ["Teardown", "Dev Tools", "Product"]
+draft: false
+---
+
+Most AI product debates are about the model. Copilot is interesting because its best decisions are about the *interface* — where the AI shows up, and how much it asks of you. As someone who wrote code before I owned products, it's the AI tool whose design choices I find easiest to defend.
+
+## The problem it solves
+
+The real cost in writing code isn't typing — it's the constant small context-switches: looking up an API signature, recalling the shape of a loop you've written a hundred times, translating an intent you already hold into syntax. Copilot's bet is that a lot of coding is predictable from what's already on the screen, and that the expensive interruption is leaving the editor to find out how.
+
+## The interesting constraint
+
+Copilot's defining decision is that the suggestion appears **inline, as greyed-out text you accept with Tab**, inside the flow you're already in. That constraint does more work than the model.
+
+An inline ghost-text completion asks almost nothing of the user. You don't switch windows, you don't phrase a prompt, you don't read a wall of alternatives. If the suggestion is right you press Tab; if it's wrong you keep typing and it evaporates. The cost of a bad suggestion is nearly zero, which is exactly why a model that's wrong a meaningful share of the time is still a net win. Compare that to a chat interface, where a wrong answer costs you a full read, a context switch, and the effort of having asked. Same model, very different product — because the interface sets the price of being wrong.
+
+It's the same lesson I keep hitting in AI products: **the interface, not the model, decides how much the model's mistakes cost.** Copilot made its mistakes cheap.
+
+## What I'd change, and what it would cost
+
+The weakness of ghost text is that it's ambient — it's brilliant for the next line, weak for the next *decision*. Copilot nudges you down the path you're already on and rarely tells you the path is wrong. The thing it can't do inline is say "this whole function is the wrong approach."
+
+I'd want a second, opt-in mode that reasons about the change at a higher altitude — not another chat box, but a review-style pass that argues with your direction before you've written 200 lines of it. The cost is real, and it's why it isn't the default: that mode needs far more context, runs slower, and — most dangerously — breaks the "costs nothing to ignore" contract that makes the inline experience work. The moment the AI interrupts to disagree, every false alarm is expensive again. You'd be trading Copilot's best property to buy a different kind of value, and you'd have to be very sure the second mode is right often enough to earn the interruption.
+
+That tradeoff — cheap-and-ambient versus expensive-and-opinionated — is the whole game in AI tooling right now. Copilot picked cheap-and-ambient and executed it cleanly. The next win is whoever adds the opinionated mode without wrecking the ambient one.

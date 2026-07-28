@@ -1,0 +1,38 @@
+---
+title: What I check before shipping an LLM feature
+slug: shipping-llm-feature-checklist
+date: 2026-07-20
+excerpt: An opinionated pre-ship checklist for AI features — about method, not any one product.
+tags: ["LLM", "Evaluation", "Method"]
+draft: false
+---
+
+Shipping a feature backed by a language model is not like shipping a normal feature. The output isn't fixed, the failure modes are quiet, and "it worked when I tried it" tells you almost nothing. Here's the checklist I actually run before an LLM feature goes out. It's about method, so none of it is specific to any product I've worked on.
+
+## 1. Is quality a number yet?
+
+If the only way to know whether a change helped is to try a few prompts by hand, the feature isn't ready. Before anything ships I want an evaluation set — a few dozen to a hundred representative scenarios — that scores response quality automatically on every prompt or model change. Not because the score is truth, but because it's the only way to catch a change that fixes one case and silently breaks three others. A prompt tweak with no eval behind it is a guess wearing a lab coat.
+
+## 2. What happens on the bad path, not the demo path?
+
+Demos run the happy path. Users don't. Before ship I want to have seen the feature handle the ambiguous request, the out-of-scope request, and the request it simply can't answer. The question isn't "is the good answer good" — it's "is the bad answer safe, honest, and recoverable." A model that says "I can't do that" cleanly is worth more than one that improvises confidently and wrongly.
+
+## 3. Have I constrained the surface to what I can defend?
+
+The instinct is to give the model an open-ended interface because it feels powerful. But an open surface is one you can't evaluate and users can't predict. I'd rather ship a narrower surface — explicit capabilities, guided entry points — that reliably does a few things than a chat box that might do anything, including disappoint. A smaller surface is easier to trust and easier to keep from regressing.
+
+## 4. Does the latency read as broken?
+
+A correct answer that takes fifteen seconds to arrive is, to the user, a broken feature. Before ship I want a latency budget and the UX to match it: stream the response, show real progress, route simple requests to a lighter model instead of paying frontier latency on everything. Perceived speed is part of correctness.
+
+## 5. Is the cost of being right sustainable?
+
+Frontier models on every call is a fine way to demo and a bad way to operate. I want a routing story — cheap model for simple requests, expensive model reserved for genuine reasoning — before the traffic arrives, not after the bill does.
+
+## 6. Am I marking projections as projections?
+
+When I present what the feature will do, a modeled number and a measured one are different claims. "Expected to cut handling time" and "cut handling time" are not the same sentence, and collapsing them is the fastest way to lose a technical stakeholder. If I haven't measured it, I say so.
+
+---
+
+None of this makes an LLM feature deterministic. It makes it *accountable* — which is the most you can ask of a system whose output you can't fully predict, and the least you should ask before putting it in front of someone.

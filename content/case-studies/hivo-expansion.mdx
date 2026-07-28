@@ -1,0 +1,63 @@
+---
+title: One product, three regulatory regimes
+slug: hivo-expansion
+role: Product Owner
+org: Hivo
+timeframe: Dec 2025 – Mar 2026
+teamSize: Cross-functional (eng, design, business)
+whatThisShows: Adapting one codebase to law, currency, and culture
+cardProblem: A North-American coworking marketplace had to work under Saudi and UAE payment rails, tax law, and culture — on one unified codebase.
+tags: ["Marketplace", "Localization", "Go-to-Market"]
+order: 2
+confidential: false
+metaDescription: Expanding a coworking marketplace from its North-American home market into Saudi Arabia and the UAE on a single codebase — payments, RTL, tax compliance, and a web-first discovery bet.
+phases:
+  - { label: "Regional discovery", weight: 22, series: "a" }
+  - { label: "Fintech + compliance", weight: 28, series: "neutral" }
+  - { label: "Cultural UX / RTL", weight: 22, series: "b" }
+  - { label: "Dubai launch", weight: 28, series: "a" }
+---
+
+<Context>
+
+Hivo is a two-sided coworking marketplace — remote professionals ("guests") booking underused commercial space from "hosts." The core product was built for North America. As Product Owner I owned the roadmap to take it into the Gulf: first Saudi Arabia, then the UAE. Counting the North-American home market, that meant one codebase serving three regulatory regimes at once, without forking into three products.
+
+</Context>
+
+<Problem>
+
+The booking engine worked; the market didn't. International card rails hit high domestic decline rates against local payment networks. The app-download-first flow lost users who search the web before they install anything. And the product was legally non-compliant with Saudi ZATCA e-invoicing while blind to the cultural trust signals local users expect. Translating the interface into Arabic would have fixed none of it.
+
+</Problem>
+
+<WhatIDid>
+
+- Split discovery into three workstreams — **fintech, cultural UX, and regulatory compliance** — and used a weighted **RICE matrix** to set MVP scope, so prioritization was settled by score rather than by seniority.
+- **Fintech:** prioritized Mada (the national debit network) plus STC Pay and Apple Pay so domestic, one-tap payments actually cleared.
+- **Cultural UX:** re-architected the layout for bidirectional RTL and added region-specific amenity filters (prayer-room proximity, spatial zoning) and Ramadan availability logic — localization as architecture, not translation.
+- **Regulatory:** automated ZATCA Phase-2 e-invoicing inside the booking pipeline and built a Commercial-Registration host-verification flow so commercial hosts could onboard without legal exposure.
+- Led the **Dubai launch:** AED multi-currency, local gateways, and UAE Free Zone compliance on the same core.
+
+</WhatIDid>
+
+<Decision>
+
+I moved the Gulf launch to **web-first discovery** instead of the app-download-first model the global core team's architecture assumed. In a market where users search before they install, forcing an install before showing any value was bleeding early-funnel demand.
+
+<Rejected>Rejected: app-download-first — the global default the core team preferred.</Rejected>
+
+It cost real engineering effort and diverged from the core team's architecture, which I had to defend. But acquisition cost is set at the top of the funnel, and no downstream polish recovers a user who bounced before they saw a listing.
+
+</Decision>
+
+<Outcome>
+
+The Dubai launch grew host inventory **45% in the first month** and lifted host activation **30%** through a redesigned onboarding flow, and the focused MVP directly supported a **$250K seed round**. The web-first change was *modeled* to cut early-funnel drop-off by roughly 35–40% — a projection from market testing, not yet a measured result, and I'd treat it as one.
+
+</Outcome>
+
+<Differently>
+
+I'd have shipped the web-first bet as a live A/B from day one instead of leaning on modeled funnel numbers. A measured lift would have made the case unarguable to the core team — and I wouldn't have to caveat the projection now.
+
+</Differently>

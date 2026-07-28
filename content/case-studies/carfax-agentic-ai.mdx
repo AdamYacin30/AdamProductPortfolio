@@ -1,0 +1,62 @@
+---
+title: Shipping an agentic AI product when you can't trust the output
+slug: carfax-agentic-ai
+role: Associate Product Manager
+org: Carfax × S&P Global Mobility
+timeframe: Apr 2026 – Present
+teamSize: 20-person cross-functional team
+whatThisShows: Making a non-deterministic system shippable
+cardProblem: Non-deterministic output breaks the normal PM feedback loop — you can't tell whether a change improved things or quietly regressed them.
+tags: ["Agentic AI", "LLM Evaluation", "0 to 1"]
+order: 1
+confidential: true
+metaDescription: How I built the evaluation, model-routing, latency, and phased-release scaffolding to ship Carfax's first agentic AI product from 0 to 1.
+phases:
+  - { label: "Discovery", weight: 18, series: "a" }
+  - { label: "Eval framework", weight: 27, series: "b" }
+  - { label: "Routing + latency", weight: 20, series: "neutral" }
+  - { label: "Phased release", weight: 35, series: "a" }
+---
+
+<Context>
+
+Carfax's first agentic AI product, built 0→1 in partnership with S&P Global Mobility. I owned the PRD, phased roadmap, go-to-market, and execution across a 20-person cross-functional team spanning engineering, ML, MLOps, UX, and PMO. There was no existing AI product function to inherit — the process for shipping this had to be built alongside the product itself.
+
+</Context>
+
+<Problem>
+
+Non-deterministic systems break the normal product feedback loop. A single prompt or model change can improve one interaction and silently regress another, and you cannot eyeball a diff and know whether quality went up or down. Without an objective read on output quality, every release is a guess, and every internal argument about whether the thing is "good enough" is won by whoever is most confident in the room.
+
+</Problem>
+
+<WhatIDid>
+
+- Built an **LLM evaluation framework** in LangSmith across 50–100 representative scenarios, scoring response quality automatically on every prompt or model change. It turned "did this help?" into a number and caught regressions before they reached users.
+- Designed a **model-routing architecture** that sends simple requests to a lightweight model and reserves a frontier model for genuine reasoning — balancing quality against inference cost instead of paying frontier prices on every call.
+- Set a **UX-first latency budget** after diagnosing agent response times near 15 seconds that threatened retention, using async workflows, streamed responses, and skeleton loaders so the wait stopped reading as a failure.
+- Ran a **phased release**, decomposing a complex agentic system into use-case-driven launches and folding evaluation learnings between phases rather than betting everything on one launch.
+
+</WhatIDid>
+
+<Decision>
+
+I deliberately **constrained the interface**. Dealer interviews surfaced open-ended chat as a churn driver — professional users didn't know what to ask, hit dead ends, and left. So I narrowed the surface on purpose: prompt chips, explicit capability boundaries, an onboarding that showed what the agent could and couldn't do.
+
+<Rejected>Rejected: a general chat interface — the obvious, more "powerful" option.</Rejected>
+
+It traded perceived power for reliability and trust. For a user trying to finish a job rather than explore a toy, a smaller surface they can rely on beats a bigger one that disappoints — and a constrained surface is also far easier to evaluate and keep from regressing.
+
+</Decision>
+
+<Outcome>
+
+The evaluation framework is what made shipping possible: it caught regressions before release, let us launch phases without re-litigating quality each time, and gave a cross-functional team one shared definition of "good" to build against.
+
+</Outcome>
+
+<Differently>
+
+I'd stand up the eval framework and the latency budget *before* the first build, not after the first quality scare and the 15-second diagnosis. A week of scenario design and a performance target up front would have saved real rework downstream.
+
+</Differently>
