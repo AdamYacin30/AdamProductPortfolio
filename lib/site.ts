@@ -13,7 +13,7 @@ export const site = {
     linkedin: "https://www.linkedin.com/in/adam-yassine-114b82297/",
     github: "https://github.com/AdamYacin30",
   },
-  resumePath: "/resume/adam-yassine-pm-resume.pdf",
+  resumePath: "/resume/Adam%20Yassine%20-%20Resume%20-%202026.pdf",
 } as const;
 
 export type Site = typeof site;
