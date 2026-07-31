@@ -21,7 +21,7 @@ export async function generateMetadata({
     title: post.meta.title,
     description: post.meta.excerpt,
     openGraph: {
-      title: `${post.meta.title} — ${site.name}`,
+      title: `${post.meta.title} | ${site.name}`,
       description: post.meta.excerpt,
       url: `${site.url}/writing/${post.meta.slug}`,
       type: "article",

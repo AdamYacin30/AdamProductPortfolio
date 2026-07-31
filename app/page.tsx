@@ -10,11 +10,11 @@ export default function Home() {
   return (
     <>
       <section className="wrap hero">
-        <p className="eyebrow hero__kicker">AI / Technical Product Manager</p>
+        <p className="eyebrow hero__kicker">Product Manager</p>
         <h1 className="hero__name">Adam Yassine</h1>
         <p className="hero__positioning">{site.positioning}</p>
         <p className="hero__role mono">
-          {site.role} · Final-year CS, Western University
+          Computer Science, Western University · {site.location}
         </p>
       </section>
 
@@ -23,7 +23,9 @@ export default function Home() {
           <h2 id="work-h" className="section__title">
             Selected work
           </h2>
-          <p className="section__note mono">Three decisions worth defending</p>
+          <Link href="/writing" className="section__note mono">
+            Selected work blog →
+          </Link>
         </div>
         <div className="cards">
           {studies.map((c) => (
@@ -44,11 +46,11 @@ export default function Home() {
         <ul className="postlist">
           {posts.map((p) => (
             <li key={p.meta.slug} className="postlist__item">
-              <Link href={`/writing/${p.meta.slug}`} className="postlist__link">
+              <div className="postlist__link">
                 <span className="postlist__title">{p.meta.title}</span>
                 <span className="postlist__excerpt">{p.meta.excerpt}</span>
                 <span className="postlist__date mono">{formatDate(p.meta.date)}</span>
-              </Link>
+              </div>
             </li>
           ))}
           {posts.length === 0 && (
@@ -57,6 +59,30 @@ export default function Home() {
             </li>
           )}
         </ul>
+      </section>
+
+      <section className="wrap section" aria-labelledby="contact-h">
+        <div className="section__head">
+          <h2 id="contact-h" className="section__title">
+            Contact
+          </h2>
+          <p className="section__note mono">Available for product roles</p>
+        </div>
+        <div className="card">
+          <p>
+            <strong>{site.name}</strong>
+          </p>
+          <p>
+            <a href={`mailto:${site.email}`}>{site.email}</a>
+          </p>
+          <p>
+            <a href={site.socials.linkedin} target="_blank" rel="noopener noreferrer">
+              LinkedIn
+            </a>
+          </p>
+          <p>Phone: {site.phone}</p>
+          <p>{site.location}</p>
+        </div>
       </section>
     </>
   );

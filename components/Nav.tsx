@@ -2,7 +2,6 @@ import Link from "next/link";
 import { site } from "@/lib/site";
 
 const links = [
-  { href: "/work/hivo-expansion", label: "Work" },
   { href: "/about", label: "About" },
   { href: "/writing", label: "Writing" },
 ];

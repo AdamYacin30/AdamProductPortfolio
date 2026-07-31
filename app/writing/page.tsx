@@ -5,7 +5,7 @@ import { getPosts, formatDate } from "@/lib/content";
 export const metadata: Metadata = {
   title: "Writing",
   description:
-    "Teardowns and notes on shipping AI products — evaluation, constraints, and product decisions by Adam Yassine.",
+    "Notes on shipping AI products, from evaluation and constraints to product decisions.",
 };
 
 export default function WritingIndex() {

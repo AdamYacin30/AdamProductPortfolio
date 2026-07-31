@@ -5,7 +5,7 @@ import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
 import "./globals.css";
 
-// Self-hosted at build by next/font — no render-blocking Google request, no CLS.
+// Self-hosted at build by next/font for faster loading and lower layout shift.
 const bricolage = Bricolage_Grotesque({
   subsets: ["latin"],
   weight: ["600", "700"],
@@ -29,8 +29,8 @@ const plexMono = IBM_Plex_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: `${site.name} — AI / Technical Product Manager`,
-    template: `%s — ${site.name}`,
+    default: `${site.name} | Product Manager`,
+    template: `%s | ${site.name}`,
   },
   description:
     "Adam Yassine is an AI / technical product manager. Case studies on shipping agentic AI, cross-border marketplace expansion, and analytics-driven prioritization.",

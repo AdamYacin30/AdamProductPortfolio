@@ -26,7 +26,7 @@ export function Footer() {
           </li>
         </ul>
         <p className="footer__fine mono">
-          © {new Date().getFullYear()} Adam Yassine · Built in Next.js · {site.location}
+          © {new Date().getFullYear()} Adam Yassine · Product Manager
         </p>
       </div>
     </footer>
