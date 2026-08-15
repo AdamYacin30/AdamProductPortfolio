@@ -40,6 +40,9 @@ export const metadata: Metadata = {
     url: site.url,
     images: ["/og/default.png"],
   },
+  icons: {
+    icon: "/favicon.ico",
+  },
   robots: { index: true, follow: true },
 };
 
