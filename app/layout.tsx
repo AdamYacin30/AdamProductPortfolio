@@ -62,6 +62,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
   return (
     <html lang="en" className={`${bricolage.variable} ${sourceSerif.variable} ${plexMono.variable}`}>
+      <head>
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+      </head>
       <body>
         <script
           type="application/ld+json"
