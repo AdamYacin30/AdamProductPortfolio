@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { CaseStudyMeta } from "@/lib/schema";
+import { getTagClassName } from "@/lib/tagStyles";
 import { PhaseTrace } from "./PhaseTrace";
 
 const caseStudyLinks: Record<string, string> = {
@@ -29,7 +30,7 @@ export function CaseStudyCard({ meta }: { meta: CaseStudyMeta }) {
         </span>
         <span className="card__tags">
           {meta.tags.slice(0, 2).map((t) => (
-            <span key={t}>{t}</span>
+            <span key={t} className={getTagClassName(t)}>{t}</span>
           ))}
         </span>
       </div>

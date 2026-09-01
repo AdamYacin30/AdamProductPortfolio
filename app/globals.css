@@ -304,11 +304,58 @@ hr {
 }
 .card__tags {
   display: flex;
-  gap: 0.75rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
 }
 .card__tags span {
   text-transform: uppercase;
   letter-spacing: 0.05em;
+  border-radius: 999px;
+  padding: 0.2rem 0.5rem;
+  font-size: 0.6rem;
+  border: 1px solid transparent;
+}
+
+.tag {
+  border-radius: 999px;
+}
+.tag--ai {
+  background: rgba(91, 75, 224, 0.08);
+  border-color: rgba(91, 75, 224, 0.22);
+  color: #1f1a53;
+}
+.tag--strategy {
+  background: rgba(18, 135, 111, 0.08);
+  border-color: rgba(18, 135, 111, 0.22);
+  color: #0f4a3f;
+}
+.tag--growth {
+  background: rgba(198, 122, 0, 0.1);
+  border-color: rgba(198, 122, 0, 0.2);
+  color: #6d4300;
+}
+
+.cs__tags li {
+  border-radius: 999px;
+  padding: 0.2rem 0.65rem;
+  border: 1px solid transparent;
+  font-size: 0.62rem;
+}
+
+.cs__tags li.tag--ai {
+  background: rgba(91, 75, 224, 0.08);
+  border-color: rgba(91, 75, 224, 0.22);
+  color: #1f1a53;
+}
+.cs__tags li.tag--strategy {
+  background: rgba(18, 135, 111, 0.08);
+  border-color: rgba(18, 135, 111, 0.22);
+  color: #0f4a3f;
+}
+.cs__tags li.tag--growth {
+  background: rgba(198, 122, 0, 0.1);
+  border-color: rgba(198, 122, 0, 0.2);
+  color: #6d4300;
 }
 
 /* Writing list */

@@ -5,6 +5,7 @@ import { compileMDX } from "next-mdx-remote/rsc";
 import { getCaseStudies, getCaseStudy } from "@/lib/content";
 import { mdxComponents } from "@/components/mdx";
 import { PhaseTrace } from "@/components/PhaseTrace";
+import { getTagClassName } from "@/lib/tagStyles";
 import { site } from "@/lib/site";
 
 export function generateStaticParams() {
@@ -66,7 +67,7 @@ export default async function CaseStudyPage({
         </p>
         <ul className="cs__tags mono" aria-label="Context tags">
           {meta.tags.map((t) => (
-            <li key={t}>{t}</li>
+            <li key={t} className={getTagClassName(t)}>{t}</li>
           ))}
         </ul>
       </header>
