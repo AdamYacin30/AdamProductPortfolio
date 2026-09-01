@@ -14,7 +14,7 @@ export default function Home() {
         <h1 className="hero__name">Adam Yassine</h1>
         <p className="hero__positioning">{site.positioning}</p>
         <p className="hero__role mono">
-          Computer Science, Western University · {site.location}
+          B.Sc. in Computer Science, Western University, expected April 2027 · {site.location}
         </p>
       </section>
 
@@ -80,7 +80,6 @@ export default function Home() {
               LinkedIn
             </a>
           </p>
-          <p>Phone: {site.phone}</p>
           <p>{site.location}</p>
         </div>
       </section>

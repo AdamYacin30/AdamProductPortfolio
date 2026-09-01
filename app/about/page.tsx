@@ -28,8 +28,8 @@ export default function AboutPage() {
 
         <h2>Background</h2>
         <ul>
-          <li>B.Sc. in Computer Science, Western University.</li>
-          <li>IBM AI Product Manager Professional Certificate, in progress.</li>
+          <li>B.Sc. in Computer Science, Western University, expected April 2027.</li>
+          <li>Duke AI Product Management Specialization, in progress.</li>
           <li>Founder of Wallstopia.</li>
           <li>{site.location}.</li>
         </ul>
