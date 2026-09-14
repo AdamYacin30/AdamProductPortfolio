@@ -7,6 +7,8 @@ const caseStudyLinks: Record<string, string> = {
   "carfax-agentic-ai": "https://prism-existence-de2.notion.site/Building-Carfax-s-First-Agentic-AI-Product-a501851387bc4588831d1bf8f36f199a",
   "hivo-expansion": "https://prism-existence-de2.notion.site/Solving-Cold-Start-in-a-Two-Sided-Marketplace-6325d79ad9c9449ab7b9876a31345a62",
   "carfax-analytics": "https://prism-existence-de2.notion.site/Monetizing-the-Workflow-Not-the-Network-A-Product-Strategy-Case-Study-805deed8859241d4956d26b02abdf6e4",
+  "spacebeacon-voice-travel-platform": "https://prism-existence-de2.notion.site/Building-the-Backbone-of-a-Voice-First-Travel-Platform-dc98e394fa6e4b579e1d04d4f0c1d04c",
+  "templating-trust-ai-policy-generator": "https://prism-existence-de2.notion.site/Templating-Trust-An-AI-Policy-Generator-for-ISO-and-SOC-Compliance-b9a113bac13d49049c4385b99933f592",
 };
 
 export function CaseStudyCard({ meta }: { meta: CaseStudyMeta }) {
