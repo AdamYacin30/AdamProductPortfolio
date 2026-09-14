@@ -40,6 +40,7 @@ export const postFrontmatter = z.object({
   excerpt: z.string(),
   tags: z.array(z.string()).min(1),
   draft: z.boolean().default(false),
+  externalUrl: z.string().url().optional(),
 });
 
 export type Phase = z.infer<typeof phaseSchema>;

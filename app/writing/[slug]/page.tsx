@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 import Link from "next/link";
 import { compileMDX } from "next-mdx-remote/rsc";
 import { getPosts, getPost, formatDate } from "@/lib/content";
@@ -37,6 +37,7 @@ export default async function PostPage({
   const { slug } = await params;
   const post = getPost(slug);
   if (!post) notFound();
+  if (post.meta.externalUrl) redirect(post.meta.externalUrl);
 
   const { content } = await compileMDX({
     source: post.body,

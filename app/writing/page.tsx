@@ -18,15 +18,25 @@ export default function WritingIndex() {
       </header>
 
       <ul className="postlist postlist--index">
-        {posts.map((p) => (
-          <li key={p.meta.slug} className="postlist__item">
-            <Link href={`/writing/${p.meta.slug}`} className="postlist__link">
-              <span className="postlist__title">{p.meta.title}</span>
-              <span className="postlist__excerpt">{p.meta.excerpt}</span>
-              <span className="postlist__date mono">{formatDate(p.meta.date)}</span>
-            </Link>
-          </li>
-        ))}
+        {posts.map((p) => {
+          const href = p.meta.externalUrl ?? `/writing/${p.meta.slug}`;
+          const isExternal = Boolean(p.meta.externalUrl);
+
+          return (
+            <li key={p.meta.slug} className="postlist__item">
+              <Link
+                href={href}
+                className="postlist__link"
+                target={isExternal ? "_blank" : undefined}
+                rel={isExternal ? "noopener noreferrer" : undefined}
+              >
+                <span className="postlist__title">{p.meta.title}</span>
+                <span className="postlist__excerpt">{p.meta.excerpt}</span>
+                <span className="postlist__date mono">{formatDate(p.meta.date)}</span>
+              </Link>
+            </li>
+          );
+        })}
         {posts.length === 0 && (
           <li className="postlist__item mono" style={{ color: "var(--slate)", padding: "1.15rem 0" }}>
             Posts coming soon.
