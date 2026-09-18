@@ -4,8 +4,8 @@ export const site = {
   role: "Associate Product Manager, Carfax",
   // Positioning sentence describing the work in one line.
   positioning: "Product manager interested in AI systems. Took an agentic AI product 0→1 at Carfax with S&P Global Mobility, and a coworking marketplace into two countries before that.",
-  // TODO(domain): swap to the real domain once purchased (adamyassine.com or .dev).
-  url: "https://adamyassine.dev",
+  // Primary site domain
+  url: "https://adamyassine.ca",
   email: "adam.gyassine@gmail.com",
   phone: "+1 226 504 3934",
   location: "Toronto, Ontario",

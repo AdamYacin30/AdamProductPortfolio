@@ -11,6 +11,12 @@ export const metadata: Metadata = {
       "Product manager focused on AI productization, LLM evaluation, and large-scale analytics using Azure Synapse and Power BI.",
     url: `${site.url}/about`,
     siteName: site.name,
+    images: [
+      {
+        url: `${site.url}/og/about.png`,
+        alt: "Adam Yassine — Product Manager (AI & Data)",
+      },
+    ],
   },
   twitter: {
     title: "About — Adam Yassine — Product Manager (AI & Data)",
