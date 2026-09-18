@@ -2,14 +2,44 @@ import type { Metadata } from "next";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "About",
+  title: "About — Adam Yassine — Product Manager (AI & Data)",
   description:
-    "Adam Yassine has moved from engineering and analytics to product ownership and AI product management, with a focus on clear decisions and durable outcomes.",
+    "Adam Yassine — Product manager focused on AI productization, LLM evaluation, and large-scale analytics using Azure Synapse and Power BI.",
+  openGraph: {
+    title: "About — Adam Yassine — Product Manager (AI & Data)",
+    description:
+      "Product manager focused on AI productization, LLM evaluation, and large-scale analytics using Azure Synapse and Power BI.",
+    url: `${site.url}/about`,
+    siteName: site.name,
+  },
+  twitter: {
+    title: "About — Adam Yassine — Product Manager (AI & Data)",
+    card: "summary_large_image",
+    creator: site.socials?.linkedin ?? undefined,
+  },
+  alternates: {
+    canonical: `${site.url}/about`,
+  },
 };
 
 export default function AboutPage() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: site.name,
+    jobTitle: site.role,
+    url: site.url,
+    sameAs: [site.socials.linkedin, site.socials.github],
+    description:
+      "Product manager focused on AI productization, LLM evaluation, and large-scale analytics.",
+  };
   return (
     <div className="wrap page">
+      <script
+        key="ldjson-person"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <header className="page__header">
         <p className="eyebrow">About</p>
         <h1 className="page__title">How I got to product and how I work</h1>
