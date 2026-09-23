@@ -7,9 +7,25 @@ export const metadata: Metadata = {
   title: "Data — Adam Yassine — Data & Analytics",
   description:
     "Data analytics portfolio — pipelines, dashboards, and analysis that informed product decisions. SQL, Python, Azure Synapse, Power BI.",
-  themeColor: "#101418",
+  openGraph: {
+    title: "Data — Adam Yassine — Data & Analytics",
+    description:
+      "Data analytics portfolio — pipelines, dashboards, and analysis that informed product decisions. SQL, Python, Azure Synapse, Power BI.",
+    url: `${process.env.NEXT_PUBLIC_SITE_URL ?? "https://adamyassine.ca"}/data`,
+    siteName: "Adam Yassine",
+    images: [{ url: `${process.env.NEXT_PUBLIC_SITE_URL ?? "https://adamyassine.ca"}/og/data.png`, alt: "Data portfolio — Adam Yassine" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+  },
   alternates: { canonical: "/data" },
 };
+
+export function generateViewport() {
+  return {
+    themeColor: "#101418",
+  };
+}
 
 export default function DataLayout({ children }: { children: React.ReactNode }) {
   return (
