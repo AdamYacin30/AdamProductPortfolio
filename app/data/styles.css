@@ -89,6 +89,17 @@ body:has([data-theme="dark"]) footer:not(.data-footer) {
   filter: brightness(1);
 }
 
+@media (prefers-reduced-motion: reduce) {
+  .project__frame img {
+    transition: none !important;
+  }
+}
+
+.project__frame:focus-within {
+  outline: 3px solid color-mix(in srgb, var(--trace-a) 60%, white 10%);
+  outline-offset: 4px;
+}
+
 @media (max-width: 768px) {
   .projects-grid { grid-template-columns: 1fr; }
 }
