@@ -24,6 +24,11 @@ body:has([data-theme="dark"]) {
   color: var(--ink);
 }
 
+/* Hide the root site's main nav when the data theme is active so /data is standalone. */
+body:has([data-theme="dark"]) .nav:not(.data-nav) {
+  display: none;
+}
+
 .data__main {
   padding-top: 48px;
   padding-bottom: 80px;
