@@ -1,0 +1,71 @@
+:root {
+  /* keep defaults defined elsewhere */
+}
+
+/* Dark theme scoped to the data subtree */
+[data-theme="dark"] {
+  --ink: #F2F4F3;
+  --paper: #101418;
+  --surface: #171C21;
+  --slate: #8A949E;
+  --rule: #262C33;
+  --trace-a: #7C6BFF;
+  --trace-b: #19A37F;
+}
+
+/* Ensure body background follows the dark theme when a data subtree exists */
+body:has([data-theme="dark"]) {
+  background: var(--paper);
+}
+
+.data-root {
+  min-height: 100dvh;
+  background: var(--paper);
+  color: var(--ink);
+}
+
+.data__main {
+  padding-top: 48px;
+  padding-bottom: 80px;
+}
+
+.data-hero .hero-lead {
+  max-width: 56ch;
+}
+
+.eyebrow.mono {
+  color: var(--slate);
+}
+
+.hero-meta {
+  color: var(--slate);
+}
+
+/* Capability strip */
+.capability-strip {
+  margin-top: 28px;
+  border-top: 1px solid var(--rule);
+  padding-top: 18px;
+  color: var(--slate);
+  font-family: var(--mono-font);
+}
+
+/* Experience list */
+.experience-list {
+  margin-top: 32px;
+}
+.experience-entry {
+  padding: 28px 0;
+  border-top: 1px solid var(--rule);
+}
+.experience-entry:first-of-type {
+  border-top: none;
+}
+.experience-entry .dates {
+  color: var(--slate);
+  font-family: var(--mono-font);
+}
+
+/* utility
+ * keep succinct; project grid styles will be added later
+ */
