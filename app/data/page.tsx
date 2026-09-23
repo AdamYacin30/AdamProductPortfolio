@@ -1,6 +1,7 @@
 import DataHeader from "@/components/data/DataHeader";
 import CapabilityStrip from "@/components/data/CapabilityStrip";
 import ExperienceList from "@/components/data/ExperienceList";
+import ProjectsGrid from "@/components/data/ProjectsGrid";
 import { site } from "@/lib/site";
 
 export default function DataPage() {
@@ -22,6 +23,8 @@ export default function DataPage() {
       <CapabilityStrip />
 
       <ExperienceList />
+
+      <ProjectsGrid />
     </div>
   );
 }

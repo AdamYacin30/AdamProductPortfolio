@@ -29,6 +29,11 @@ body:has([data-theme="dark"]) .nav:not(.data-nav) {
   display: none;
 }
 
+/* Hide root footer when viewing data subtree */
+body:has([data-theme="dark"]) footer:not(.data-footer) {
+  display: none;
+}
+
 .data__main {
   padding-top: 48px;
   padding-bottom: 80px;
@@ -55,6 +60,39 @@ body:has([data-theme="dark"]) .nav:not(.data-nav) {
   font-family: var(--mono-font);
 }
 
+/* Projects grid */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+.project-card {
+  background: transparent;
+}
+.project__frame {
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  padding: 0.5rem;
+  display: block;
+  overflow: hidden;
+}
+.project__frame img {
+  display: block;
+  width: 100%;
+  height: auto;
+  filter: brightness(0.85);
+  transition: filter 220ms ease;
+}
+.project__frame:focus-within img,
+.project__frame:hover img {
+  filter: brightness(1);
+}
+
+@media (max-width: 768px) {
+  .projects-grid { grid-template-columns: 1fr; }
+}
+
 /* Experience list */
 .experience-list {
   margin-top: 32px;
@@ -69,6 +107,19 @@ body:has([data-theme="dark"]) .nav:not(.data-nav) {
 .experience-entry .dates {
   color: var(--slate);
   font-family: var(--mono-font);
+}
+
+.impact {
+  margin: 0.5rem 0;
+  max-width: 68ch;
+}
+
+.impact::before {
+  content: "•";
+  display: inline-block;
+  width: 1em;
+  margin-right: 0.5em;
+  color: var(--trace-a);
 }
 
 /* utility

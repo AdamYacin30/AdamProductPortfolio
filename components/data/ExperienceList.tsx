@@ -5,9 +5,9 @@ export default function ExperienceList() {
       title: "Data Product Analyst",
       dates: "Sept 2025 – Apr 2026",
       bullets: [
-        "Ran analytics across 35B+ records from 260K+ data sources in Python and SQL, surfacing product utilization trends that fed feature prioritization.",
-        "Built and maintained Azure Synapse ETL pipelines producing analysis-ready datasets used across the organization, integrating sources across Azure and Snowflake.",
-        "Built feature-level usage dashboards and ran churn cohort analysis, turning adoption findings into roadmap decisions alongside the product managers who owned them.",
+        "Analyzed 35B+ records to identify feature usage drivers → informed roadmap prioritization.",
+        "Built Azure Synapse ETL pipelines to produce analysis-ready datasets, reducing time-to-insight.",
+        "Delivered feature-level dashboards and churn cohorts → translated into concrete roadmap actions.",
       ],
     },
     {
@@ -15,9 +15,9 @@ export default function ExperienceList() {
       title: "Business Analyst",
       dates: "Jan 2025 – Apr 2025",
       bullets: [
-        "Built an investor-ready pitch deck targeting a $2M seed for an AI data platform in renewable energy, sized against a $15B+ addressable market.",
-        "Translated 20+ industry reports and benchmarks on 8 competitors into 10+ prioritized platform requirements.",
-        "Delivered 3-year financial projections and a phased North American go-to-market strategy.",
+        "Prepared investor pitch and TAM analysis supporting a $2M seed target.",
+        "Synthesized 20+ reports into prioritized product requirements.",
+        "Built 3-year financial model and phased GTM plan for North America.",
       ],
     },
     {
@@ -25,9 +25,9 @@ export default function ExperienceList() {
       title: "Data Analyst",
       dates: "May 2025 – Jun 2025",
       bullets: [
-        "Restructured the W-PAS dataset to map functional accommodation needs against job demands, surfacing systemic accessibility gaps.",
-        "Built and tested machine learning models predicting workplace environmental considerations from accessibility analytics.",
-        "Built structured tracking frameworks for functional needs and accommodation barriers within an agile intrapreneurship cohort.",
+        "Reformatted W-PAS to map accommodations → surfaced enterprise accessibility gaps.",
+        "Built ML models predicting workplace environment needs from accessibility signals.",
+        "Implemented tracking frameworks to operationalize accommodation data in product workflows.",
       ],
     },
   ];
@@ -41,7 +41,7 @@ export default function ExperienceList() {
           <div className="dates mono">{r.dates}</div>
           <ul>
             {r.bullets.map((b, i) => (
-              <li key={i}>{b}</li>
+              <li key={i} className="impact">{b}</li>
             ))}
           </ul>
         </article>
