@@ -76,6 +76,15 @@ export default function AboutPage() {
           <li>{site.location}.</li>
         </ul>
 
+        <p className="data-cta">
+          <a href="/data" aria-label="Explore my data portfolio — analyst-facing, dark theme" className="mono">
+            Explore my Data work — analyst-facing dashboards &amp; pipelines
+          </a>
+          <span className="muted" style={{ display: 'block', marginTop: 6, fontSize: '0.9rem' }}>
+            Dark theme · technical audience
+          </span>
+        </p>
+
         <h2>Tools &amp; Technologies</h2>
         <div>
           <h3>Languages</h3>
