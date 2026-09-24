@@ -7,7 +7,7 @@ import { site } from "@/lib/site";
 export default function DataPage() {
   return (
     <div className="data-page">
-      <section className="hero">
+      <section className="wrap hero">
         <p className="hero__kicker mono">DATA &amp; ANALYTICS</p>
         <h1 className="hero__name">Adam Yassine</h1>
         <p className="hero__positioning">
