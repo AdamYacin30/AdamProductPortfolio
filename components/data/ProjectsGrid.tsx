@@ -6,7 +6,7 @@ const projects = [
   { title: "Browser Extension Product Analytics", tool: "TABLEAU", caption: "TODO caption", date: "Oct 2025" },
   { title: "iOS App Value Metrics Dashboard", tool: "POWER BI", caption: "TODO caption", date: "Nov–Dec 2025" },
   { title: "Manufacturing Operations Performance", tool: "POWER BI", caption: "Plant-level Excel data unified into a single performance report; DAX measures standardized dataset and reduced errors.", date: "Jun 2025" },
-  { title: "Excel Automation Dashboard", tool: "EXCEL / VBA", caption: "TODO caption", date: "TBD" },
+  { title: "Financial Report Automation & Market Summary", tool: "Python and AI", caption: "TODO caption", date: "TBD" },
 ];
 
 export default function ProjectsGrid() {
