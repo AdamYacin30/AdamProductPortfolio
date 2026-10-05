@@ -215,6 +215,11 @@ hr {
 .page__prose {
   max-width: var(--measure);
 }
+
+/* Ensure About page prose uses the site body font to match other pages */
+.page__prose {
+  font-family: var(--font-source-serif), Georgia, "Times New Roman", serif;
+}
 .page__prose h2 {
   padding-top: 0.4rem;
   border-top: 1px solid var(--rule);
