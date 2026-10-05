@@ -38,3 +38,6 @@ Everything derives from them. The signature **phase trace** is `components/Phase
 
 Static export → any static host. Vercel: framework preset "Next.js", it detects the
 export automatically. OG images are committed static files; no runtime image service.
+
+---
+**Note:** The `/data` subdomain (data portfolio) is coming soon — development is paused for now but the code remains in this branch.

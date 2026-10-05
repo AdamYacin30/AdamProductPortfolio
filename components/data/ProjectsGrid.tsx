@@ -1,12 +1,10 @@
 import Image from "next/image";
 
 const projects = [
-  { title: "Vehicle Valuation Usage Dashboard", tool: "POWER BI", caption: "TODO caption", date: "Sept–Nov 2025" },
-  { title: "Consumer Analytics Dashboard", tool: "POWER BI", caption: "TODO caption", date: "Jan–Feb 2026" },
-  { title: "Browser Extension Product Analytics", tool: "TABLEAU", caption: "TODO caption", date: "Oct 2025" },
-  { title: "iOS App Value Metrics Dashboard", tool: "POWER BI", caption: "TODO caption", date: "Nov–Dec 2025" },
-  { title: "Manufacturing Operations Performance", tool: "POWER BI", caption: "Plant-level Excel data unified into a single performance report; DAX measures standardized dataset and reduced errors.", date: "Jun 2025" },
-  { title: "Financial Report Automation & Market Summary", tool: "Python and AI", caption: "TODO caption", date: "TBD" },
+  { title: "Vehicle Valuation Usage", tool: "Power BI, Carfax", caption: "Placeholder: project details and outcomes.", date: "Sept–Nov 2025", image: "/og/Valuation Usage Dashboard.png", todo: true },
+  { title: "Quick View Browser Extension Funnel", tool: "Tableau, Carfax", caption: "Placeholder: funnel and retention findings.", date: "Oct 2025", image: "/og/Browser Extension Dashboard.png", todo: true },
+  { title: "Financial Research Automation", tool: "Python + AI, Encore Financial", caption: "Automated research and reporting (Jun–Sep 2025).", date: "Jun–Sep 2025", image: "/og/market summary dashboard.png", todo: true },
+  { title: "{{TODO: public project}}", tool: "Public data + SQL", caption: "Placeholder—full numbers, SQL and notebooks will be published here.", date: "TBD", image: "/og/placeholder-3.png", github: "https://github.com/your-repo" },
 ];
 
 export default function ProjectsGrid() {
@@ -17,11 +15,16 @@ export default function ProjectsGrid() {
         {projects.map((p, i) => (
           <article key={p.title} className="project-card">
             <div className="project__frame">
-              <Image src={`/og/placeholder-${(i % 3) + 1}.png`} alt={`Screenshot: ${p.title}`} width={800} height={500} />
+              <div className="project__media">
+                <Image src={p.image} alt={p.title} fill style={{ objectFit: 'contain', objectPosition: 'center top' }} />
+              </div>
             </div>
             <p className="mono project__tool">{p.tool}</p>
             <h3 className="project__title">{p.title}</h3>
             <p className="project__caption">{p.caption}</p>
+            {p.github && (
+              <div className="project__links"><a href={p.github} target="_blank" rel="noopener noreferrer">View code</a></div>
+            )}
           </article>
         ))}
       </div>
