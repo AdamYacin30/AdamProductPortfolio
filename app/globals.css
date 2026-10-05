@@ -48,7 +48,7 @@ html {
 body {
   background: var(--paper);
   color: var(--ink);
-  font-family: var(--font-source-serif), Georgia, "Times New Roman", serif;
+  font-family: var(--font-bricolage), "Segoe UI", system-ui, sans-serif;
   font-size: 1.0625rem;
   line-height: 1.7;
   font-feature-settings: "kern";
@@ -102,6 +102,30 @@ hr {
   max-width: 72rem;
   margin-inline: auto;
   padding-inline: var(--gutter);
+}
+
+/* Data route header adjustments */
+.nav.data-nav {
+  border-bottom: 1px solid color-mix(in srgb, var(--rule) 60%, transparent 0%);
+}
+.nav.data-nav .nav__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.nav__brand {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.nav__brand-sub { font-size: 0.72rem; color: var(--slate); }
+.nav__links { display: flex; gap: 1.1rem; align-items: center; }
+
+@media (max-width: 768px) {
+  .nav.data-nav .nav__inner { flex-direction: column; align-items: flex-start; gap: 0.6rem; padding-block: 0.6rem; }
+  .nav__links { display: flex; gap: 0.6rem; flex-wrap: wrap; }
+  .nav__links a { padding: 8px 10px; border-radius: 6px; }
+  .nav__brand { align-items: flex-start; }
 }
 
 .measure {
@@ -191,6 +215,9 @@ hr {
 .page__prose {
   max-width: var(--measure);
 }
+
+/* Ensure About page prose uses the site body font to match other pages */
+
 .page__prose h2 {
   padding-top: 0.4rem;
   border-top: 1px solid var(--rule);

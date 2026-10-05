@@ -5,9 +5,7 @@ export default function ExperienceList() {
       title: "Data Product Analyst",
       dates: "Sept 2025 – Apr 2026",
       bullets: [
-        "Analyzed 35B+ records to identify feature usage drivers → informed roadmap prioritization.",
-        "Built Azure Synapse ETL pipelines to produce analysis-ready datasets, reducing time-to-insight.",
-        "Delivered feature-level dashboards and churn cohorts → translated into concrete roadmap actions.",
+        "Built the data pipelines and product dashboards behind roadmap decisions.",
       ],
     },
     {
@@ -15,9 +13,7 @@ export default function ExperienceList() {
       title: "Business Analyst",
       dates: "Jan 2025 – Apr 2025",
       bullets: [
-        "Prepared investor pitch and TAM analysis supporting a $2M seed target.",
-        "Synthesized 20+ reports into prioritized product requirements.",
-        "Built 3-year financial model and phased GTM plan for North America.",
+        "Market sizing and financial modeling for a $2M seed raise.",
       ],
     },
     {
@@ -25,27 +21,42 @@ export default function ExperienceList() {
       title: "Data Analyst",
       dates: "May 2025 – Jun 2025",
       bullets: [
-        "Reformatted W-PAS to map accommodations → surfaced enterprise accessibility gaps.",
-        "Built ML models predicting workplace environment needs from accessibility signals.",
-        "Implemented tracking frameworks to operationalize accommodation data in product workflows.",
+        "Restructured accessibility data and built models to predict workplace accommodation needs.",
       ],
     },
   ];
 
   return (
-    <section id="experience" className="experience-list">
-      <h2>Experience</h2>
-      {roles.map((r) => (
-        <article key={r.company} className="experience-entry">
-          <h3 className="display">{r.company} — {r.title}</h3>
-          <div className="dates mono">{r.dates}</div>
-          <ul>
-            {r.bullets.map((b, i) => (
-              <li key={i} className="impact">{b}</li>
-            ))}
-          </ul>
-        </article>
-      ))}
-    </section>
+    <>
+      <section id="skills" className="skills-section">
+        <h2>Skills</h2>
+        <div className="skills-list">
+          <span className="skill-chip">SQL</span>
+          <span className="skill-chip">Python</span>
+          <span className="skill-chip">Azure Synapse</span>
+          <span className="skill-chip">Snowflake</span>
+          <span className="skill-chip">Power BI</span>
+          <span className="skill-chip">Tableau</span>
+          <span className="skill-chip">DAX</span>
+          <span className="skill-chip">Excel/VBA</span>
+        </div>
+      </section>
+
+      <section id="experience" className="experience-list">
+        <h2>Experience</h2>
+        <div className="timeline">
+          {roles.map((r) => (
+            <div key={r.company} className="timeline-item">
+              <div className="timeline-left">
+                <div className="company">{r.company} · <span className="title muted">{r.title}</span></div>
+                <div className="summary">{r.bullets[0]}</div>
+              </div>
+              <div className="timeline-right">{r.dates}</div>
+            </div>
+          ))}
+        </div>
+        <p className="mono"><a href="/resume/Adam%20Yassine%20-%20PM%20-%20Resume%20(Master).pdf" target="_blank" rel="noopener noreferrer">View full resume</a></p>
+      </section>
+    </>
   );
 }

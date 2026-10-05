@@ -6,7 +6,7 @@ export default function DataHeader() {
       <div className="wrap nav__inner">
         <Link href="/data" className="nav__brand mono">
           Adam Yassine
-          <span className="nav__brand-sub">DATA &amp; ANALYTICS</span>
+          <span className="nav__brand-sub">Associate Product Manager, Carfax</span>
         </Link>
 
         <nav aria-label="Data primary">
@@ -18,9 +18,12 @@ export default function DataHeader() {
               <a href="#projects">Projects</a>
             </li>
             <li>
-              <a href="/resume/adam-yassine-data-resume.pdf" target="_blank" rel="noopener noreferrer">
+              <a href={"/resume/Adam%20Yassine%20-%20PM%20-%20Resume%20(Master).pdf"} target="_blank" rel="noopener noreferrer">
                 Resume
               </a>
+            </li>
+            <li>
+              <a href="mailto:adam@example.com">adam@example.com</a>
             </li>
             <li className="nav__light">
               <Link href="/">Product work →</Link>

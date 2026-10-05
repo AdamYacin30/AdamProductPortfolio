@@ -13,8 +13,8 @@ export const site = {
     linkedin: "https://www.linkedin.com/in/adam-yassine-114b82297/",
     github: "https://github.com/AdamYacin30",
   },
-  // Point to the original uploaded resume PDF (preserve encoding for spaces)
-  resumePath: "/resume/Adam%20Yassine%20-%20Resume%20-%202026.pdf",
+  // Point to the canonical master resume PDF (preserve encoding for spaces and parentheses)
+  resumePath: "/resume/Adam%20Yassine%20-%20PM%20-%20Resume%20(Master).pdf",
 } as const;
 
 export type Site = typeof site;
