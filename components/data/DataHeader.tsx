@@ -18,7 +18,7 @@ export default function DataHeader() {
               <a href="#projects">Projects</a>
             </li>
             <li>
-              <a href="/resume/adam-yassine-data-resume.pdf" target="_blank" rel="noopener noreferrer">
+              <a href="/resume" target="_blank" rel="noopener noreferrer">
                 Resume
               </a>
             </li>

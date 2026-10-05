@@ -55,7 +55,7 @@ export default function ExperienceList() {
             </div>
           ))}
         </div>
-        <p className="mono"><a href="/resume/adam-yassine-data-resume.pdf" target="_blank" rel="noopener noreferrer">View full resume</a></p>
+        <p className="mono"><a href="/resume" target="_blank" rel="noopener noreferrer">View full resume</a></p>
       </section>
     </>
   );
