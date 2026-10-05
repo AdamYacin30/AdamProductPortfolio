@@ -21,7 +21,7 @@ export default function DataPage() {
         </p>
         <div className="hero__actions">
           <a className="btn" href="#projects">View projects</a>
-          <a className="btn btn--ghost" href="/resume/Adam%20Yassine%20-%20Resume%20-%202026.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
+          <a className="btn btn--ghost" href="/resume/Adam%20Yassine%20-%20PM%20-%20Resume%20(Master).pdf" target="_blank" rel="noopener noreferrer">Resume</a>
           <a className="mono hero__email" href="mailto:adam@example.com">adam@example.com</a>
         </div>
       </section>

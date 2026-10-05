@@ -1,0 +1,45 @@
+Adam Yassine
+Toronto ON | adam.gyassine@gmail.com | 226-504-3934 | linkedin.com/in/adam--yassine | adamyassine.ca
+Associate Product Manager who owned Carfax's first agentic AI product from 0 to 1 with S&P Global Mobility; Product 
+Owner who grew marketplace host inventory 45%. Background in LLM evaluation, analytics, and fraud detection.
+EDUCATION 
+Bachelor of Science, Specialization in Computer Science Expected April 2027
+Western University, London, ON
+EXPERIENCE 
+CARFAX Inc. 
+Associate Product Manager – AI Agents April 2026 – Present 
+• Led Carfax's first agentic AI product from 0 to 1 with S&P Global Mobility across a 20-person cross-functional team, using 
+customer discovery to shape a phased roadmap targeting a rise in dealers actively using Carfax’s valuation products from 50% to 
+80% and 40% longer dealer contract lifetimes.
+• Built an LLM evaluation framework, an automated test suite of 100+ scenarios that checks AI answer quality after every 
+change, so each launch phase shipped only when quality held up.
+• Designed a model-routing architecture that sends simple requests to a lightweight model and complex reasoning to a premium 
+one, cutting projected inference costs at scale.
+• Proposed and prototyped a 3-agent orchestration architecture (vehicle history, market data, and recommendation specialist) 
+using Claude Code, improving response accuracy and reducing hallucination over the prior single-agent design.
+Data Product Analyst (Co-op) – Data Insights & Governance September 2025 – April 2026
+• Built 10+ self-serve Power BI and Tableau dashboards on 35B+ records; a usage dashboard tiering 1,100+ dealer accounts
+gave the sales team targeted outreach lists for low-usage dealers and set the baseline for company usage OKRs, while adoption 
+analysis lifted engagement 22%.
+• Ran cohort analysis to find churn patterns, leading to targeted product changes that cut churn 9%, and traced a subscription￾funnel revenue leak that contributed to a 10% increase in monthly recurring revenue.
+• Built and validated a fraud-detection business rule by profiling confirmed fraud cases in SQL against 10 years of historical 
+data, increasing flagged-case volume 15% and cutting false positives 14% through iterative threshold back-testing.
+HIVO Inc. 
+Product Owner (Part-time) December 2025 – March 2026
+• Partnered directly with the founder to launch a two-sided coworking marketplace in Toronto and Halifax, redesigning host 
+onboarding to grow host inventory 45% and activation 30%.
+• Defined MVP requirements and reprioritized the backlog across engineering, design, and business to get the product investor￾demo ready, supporting a $250K seed round.
+• Researched market utilization of generative AI and designed a Generative AI Listing Assistant that cut new-host listing time-to￾live by an estimated 40%, enabling non-technical coworking operators to publish market-ready listings in minutes.
+PROJECTS
+UMDB (Creative Social Platform) - Software Developer / Growth May 2026 – July 2026
+• Relaunched a social platform for emerging artists and creatives on React and Next.js, shipping 4+ features (AI assistant, 
+monetization, community voting) for 5,000+ users and driving a 20% week-over-week increase in new users.
+IRM Consulting (AI Compliance Platform) - Software Engineer July 2025 – August 2025
+• Built an AI compliance agent on a secure multi-tenant Supabase backend (OpenAI API, React, Node.js, TypeScript) that 
+generates personalized ISO 27001, ISO 42001, and SOC 1/2 documentation, cutting report creation from weeks to minutes for 
+50+ clients; now in client pilots.
+SKILLS
+• Product & Strategy: Product Strategy, Market & Customer Research, User Interviews, Go-to-Market, Agile, MVP Scoping
+• AI/ML & Agents: Agentic Systems, Multi-Agent Orchestration, LLM Evaluation (LangSmith), Prompt Design, RAG
+• Analytics & Data: SQL, Python, Power BI, Tableau, Snowflake, Azure Synapse, Statistical Analysis
+• Tools: Jira, Confluence, Figma, Excel, Google Analytics, Playwright, Claude Code, Cursor, Obsidian, N8N
