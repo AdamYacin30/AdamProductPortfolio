@@ -19,6 +19,11 @@ export const metadata: Metadata = {
     card: "summary_large_image",
   },
   alternates: { canonical: "/data" },
+  // Prevent search engines from indexing this route
+  robots: {
+    index: false,
+    follow: false,
+  },
 };
 
 export function generateViewport() {
