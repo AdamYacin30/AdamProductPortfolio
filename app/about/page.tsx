@@ -76,11 +76,7 @@ export default function AboutPage() {
           <li>{site.location}.</li>
         </ul>
 
-        <p className="data-cta">
-          <a href="/data" aria-label="Explore my data portfolio — analyst-facing" className="mono">
-            Explore my Data work — analyst-facing dashboards &amp; pipelines
-          </a>
-        </p>
+        {/* Data portfolio sunset: link removed per owner's request */}
 
         <h2>Tools &amp; Technologies</h2>
         <div>
