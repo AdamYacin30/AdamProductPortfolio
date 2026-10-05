@@ -23,9 +23,7 @@ export default function Home() {
           <h2 id="work-h" className="section__title">
             Selected work
           </h2>
-          <Link href="/writing" className="section__note mono">
-            Selected work blog →
-          </Link>
+          {/* Removed duplicate link to Writing — the Writing section below already links to posts */}
         </div>
         <div className="cards">
           {studies.map((c) => (
