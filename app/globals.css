@@ -48,7 +48,7 @@ html {
 body {
   background: var(--paper);
   color: var(--ink);
-  font-family: var(--font-source-serif), Georgia, "Times New Roman", serif;
+  font-family: var(--font-bricolage), "Segoe UI", system-ui, sans-serif;
   font-size: 1.0625rem;
   line-height: 1.7;
   font-feature-settings: "kern";
@@ -217,9 +217,7 @@ hr {
 }
 
 /* Ensure About page prose uses the site body font to match other pages */
-.page__prose {
-  font-family: var(--font-source-serif), Georgia, "Times New Roman", serif;
-}
+
 .page__prose h2 {
   padding-top: 0.4rem;
   border-top: 1px solid var(--rule);
