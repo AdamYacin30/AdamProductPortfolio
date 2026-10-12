@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { site } from "@/lib/site";
 
 export default function DataHeader() {
   return (
@@ -18,7 +19,7 @@ export default function DataHeader() {
               <a href="#projects">Projects</a>
             </li>
             <li>
-              <a href={"/resume/Adam%20Yassine%20-%20Resume%20-%202026.pdf"} target="_blank" rel="noopener noreferrer">
+              <a href={site.resumePath} target="_blank" rel="noopener noreferrer">
                 Resume
               </a>
             </li>

@@ -1,3 +1,5 @@
+import { site } from "@/lib/site";
+
 export default function ExperienceList() {
   const roles = [
     {
@@ -55,7 +57,7 @@ export default function ExperienceList() {
             </div>
           ))}
         </div>
-        <p className="mono"><a href="/resume/Adam%20Yassine%20-%20Resume%20-%202026.pdf" target="_blank" rel="noopener noreferrer">View full resume</a></p>
+        <p className="mono"><a href={site.resumePath} target="_blank" rel="noopener noreferrer">View full resume</a></p>
       </section>
     </>
   );
