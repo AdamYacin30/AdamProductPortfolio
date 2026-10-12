@@ -4,6 +4,7 @@ import { site } from "@/lib/site";
 import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
 import "./globals.css";
+import "@/components/case-study-animations.css";
 
 // Self-hosted at build by next/font for faster loading and lower layout shift.
 const bricolage = Bricolage_Grotesque({

@@ -271,6 +271,45 @@ hr {
   color: var(--slate);
 }
 
+/* Section-head actions. Mono utility face, matching the metadata line they
+   replace; 4px radius to echo the cards rather than the pill-shaped tags. */
+.section__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.5rem 0.85rem;
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  font-size: 0.72rem;
+  line-height: 1;
+  white-space: nowrap;
+  transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+.btn:hover {
+  text-decoration: none;
+}
+.btn--primary {
+  background: var(--trace-a);
+  border-color: var(--trace-a);
+  color: var(--paper);
+}
+.btn--primary:hover {
+  background: color-mix(in srgb, var(--trace-a) 88%, #000);
+  border-color: color-mix(in srgb, var(--trace-a) 88%, #000);
+}
+.btn--secondary {
+  background: transparent;
+  color: var(--ink);
+}
+.btn--secondary:hover {
+  border-color: var(--trace-a);
+  color: var(--trace-a);
+}
+
 /* Vertical stack — not a grid. A grid invites skimming past all three. */
 .cards {
   display: flex;
@@ -293,23 +332,26 @@ hr {
   text-decoration: none;
 }
 .card__head {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 1rem;
+  display: block;
 }
 .card__title {
   font-size: clamp(1.15rem, 2.6vw, 1.5rem);
   line-height: 1.15;
 }
+/* Last word + arrow travel together so the arrow never lands on its own line. */
+.card__titleEnd {
+  white-space: nowrap;
+}
 .card__arrow {
+  display: inline-block;
   color: var(--trace-a);
   font-size: 1.1rem;
-  transform: translateY(0.15rem);
-  transition: transform 0.15s ease;
+  margin-left: 0.3em;
+  transition: transform 0.2s ease;
 }
-.card:hover .card__arrow {
-  transform: translate(0.2rem, 0.15rem);
+.card:hover .card__arrow,
+.card:focus-visible .card__arrow {
+  transform: translateX(4px);
 }
 .card__problem {
   color: var(--slate);
@@ -321,13 +363,48 @@ hr {
   margin-bottom: 1.1rem;
   max-width: 34rem;
 }
+/* Role/timeframe and tags share one left-aligned line and wrap together. */
 .card__foot {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 0.5rem 1rem;
+  align-items: center;
+  gap: 0.4rem 0.75rem;
   font-size: 0.72rem;
   color: var(--slate);
+}
+
+/* The animation ships with its own hide rule at 899px, but the grid below only
+   starts at 1000px — without this the animation would render as a stray block
+   under the text between 900 and 999px. Kept here so the vendored
+   case-study-animations.css stays untouched. */
+@media (max-width: 999px) {
+  .csa {
+    display: none;
+  }
+}
+
+/* Playback speed for the card animations. Every keyframe offset in the
+   vendored stylesheet is a percentage of the duration, so overriding only the
+   duration rescales each loop without desyncing its beats. The `*` matters:
+   one animated element (the Hivo toggle knob) has no class of its own. The
+   repeated `.csa` lifts this to (0,6,0), above the deepest vendored rules
+   (e.g. `.csa-m1 .csa-b1 .csa-s1` at (0,5,0)), so it wins on specificity alone
+   rather than depending on import order or edits to that file. */
+@media (prefers-reduced-motion: no-preference) {
+  :is(.card:hover, .card:focus-visible, .csa-play) .csa.csa.csa .csa-mock * {
+    animation-duration: 6.4s;
+  }
+}
+
+/* Desktop: text on the left, decorative animation in a fixed 240px column.
+   Starts at 1000px so the text column never drops below ~560px. */
+@media (min-width: 1000px) {
+  .card--anim {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 240px;
+    gap: 40px;
+    align-items: center;
+  }
 }
 .card__tags {
   display: flex;
