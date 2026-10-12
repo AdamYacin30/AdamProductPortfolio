@@ -2,6 +2,16 @@ import Link from "next/link";
 import { site } from "@/lib/site";
 import { getCaseStudies, getPosts, formatDate } from "@/lib/content";
 import { CaseStudyCard } from "@/components/CaseStudyCard";
+import type { CaseStudyAnimationVariant } from "@/components/CaseStudyAnimation";
+
+// Which decorative animation rides along with each card.
+const cardAnimations: Record<string, CaseStudyAnimationVariant> = {
+  "carfax-agentic-ai": "carfax",
+  "hivo-expansion": "hivo",
+  "carfax-analytics": "umdb",
+  "spacebeacon-voice-travel-platform": "spacebeacon",
+  "templating-trust-ai-policy-generator": "compliance",
+};
 
 export default function Home() {
   const studies = getCaseStudies();
@@ -27,7 +37,7 @@ export default function Home() {
         </div>
         <div className="cards">
           {studies.map((c) => (
-            <CaseStudyCard key={c.meta.slug} meta={c.meta} />
+            <CaseStudyCard key={c.meta.slug} meta={c.meta} animation={cardAnimations[c.meta.slug]} />
           ))}
         </div>
       </section>
@@ -74,7 +84,14 @@ export default function Home() {
           <h2 id="contact-h" className="section__title">
             Contact
           </h2>
-          <p className="section__note mono">Available for product roles</p>
+          <div className="section__actions mono">
+            <a href={`mailto:${site.email}`} className="btn btn--primary">
+              Email me
+            </a>
+            <a href={site.resumePath} className="btn btn--secondary" download>
+              Download resume
+            </a>
+          </div>
         </div>
         <div className="card">
           <p>

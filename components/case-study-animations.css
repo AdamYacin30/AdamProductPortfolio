@@ -1,0 +1,249 @@
+/* Case study card animations
+   - Everything is namespaced with .csa- so it cannot clash with site styles.
+   - Resting state is the finished frame; the 8s loop plays while the card is hovered or keyboard-focused.
+   - Trigger selector assumes the card root has class "card"; change TRIGGER below if it differs.
+   - Hidden below 900px, and motion is skipped for prefers-reduced-motion. */
+.csa{--csa-ink:#17181a;--csa-mut:#6b717c;--csa-l:#c4c4c4;--csa-p:#5b45d6;--csa-g:#1a7f64;--csa-pt:#efedfb;--csa-at:#fcf3e2;--csa-line:#dcdedc;width:240px;height:150px;flex:none}
+@media (max-width:899px){.csa{display:none}}
+
+.csa-mock{position:relative;width:240px;height:150px;flex:none;font:10px/1.3 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--csa-ink);text-align:left;letter-spacing:0;text-transform:none}
+.csa-mock *,.csa-mock *::before,.csa-mock *::after{box-sizing:border-box}
+.csa-mock i{font-style:normal}
+.csa-panel{position:absolute;background:#fff;border:1px solid var(--csa-line);border-radius:6px;overflow:hidden}
+.csa-b{font-weight:600}.csa-m{color:var(--csa-mut)}.csa-sm{font-size:9px}.csa-xs{font-size:8.5px}
+.csa-btn{position:absolute;height:18px;border-radius:4px;font-weight:600;font-size:9px;overflow:hidden}
+.csa-btn span{position:absolute;inset:0;display:flex;align-items:center;justify-content:center}
+.csa-btn .csa-s1{background:var(--csa-p);color:#fff;opacity:0}
+.csa-btn .csa-s2{background:#fff;color:var(--csa-g);box-shadow:inset 0 0 0 1px var(--csa-g)}
+
+.csa-m1 .csa-hd{height:26px;display:flex;align-items:center;justify-content:space-between;padding:0 10px;border-bottom:1px solid #eceeec}
+.csa-m1 .csa-row{height:24px;display:flex;align-items:center;gap:7px;padding:0 10px;border-bottom:1px solid #f1f2f1}
+.csa-m1 .csa-r2{background:var(--csa-at)}
+.csa-thumb{width:16px;height:10px;border-radius:2px;background:#dcdfdc}
+.csa-nm{flex:1}
+.csa-d{font:9px ui-monospace,Menlo,Consolas,monospace;color:var(--csa-mut)}
+.csa-m1 .csa-d2{color:#8a5a12;font-weight:700}
+.csa-scan{position:absolute;left:0;right:0;top:26px;height:24px;background:linear-gradient(90deg,transparent,rgba(91,69,214,.12) 40%,rgba(91,69,214,.12) 60%,transparent);opacity:0}
+.csa-sug{position:absolute;left:8px;right:8px;top:106px;height:36px;border-left:2px solid var(--csa-p);background:#faf9fe;padding:6px 9px}
+.csa-sgt{display:flex;align-items:center;gap:4px}
+.csa-hs{display:flex;align-items:center;gap:4px;color:var(--csa-mut)}
+.csa-hsp{flex:none}
+.csa-hst{position:relative;display:inline-block;width:120px;height:12px;color:var(--csa-mut)}
+.csa-hst > span{position:absolute;right:0;top:0;white-space:nowrap;display:flex;align-items:center;gap:4px}
+.csa-hst .csa-s1{opacity:0}
+.csa-think{position:absolute;left:8px;right:8px;top:106px;height:36px;border-left:2px solid var(--csa-l);background:#fafafa;opacity:0}
+.csa-tsp{position:absolute;left:8px;top:8px}
+.csa-sk{position:absolute;left:26px;height:5px;border-radius:2px;background:linear-gradient(90deg,#ecebf6 0%,#dcd7fb 50%,#ecebf6 100%);background-size:200% 100%}
+
+.csa-host{padding:8px}
+.csa-photo{height:30px;border-radius:3px;background:#efe6d6;display:flex;align-items:center;justify-content:center}
+.csa-lrow{position:absolute;left:8px;right:8px;display:flex;justify-content:space-between;align-items:center;font-weight:600}
+.csa-tog{position:relative;width:22px;height:12px;border-radius:99px;background:var(--csa-g)}
+.csa-tog i{position:absolute;left:1.5px;top:1.5px;width:9px;height:9px;border-radius:50%;background:#fff;transform:translateX(10px)}
+.csa-cnt{position:relative;width:10px;height:12px;font-weight:700}
+.csa-cnt span{position:absolute;inset:0;text-align:right}
+.csa-cnt .csa-s1{opacity:0}.csa-cnt .csa-s2{color:var(--csa-g)}
+.csa-phone{border-radius:14px}
+.csa-map{position:absolute;inset:0;background:#eef0ec}
+.csa-road{position:absolute;background:#fff;height:6px;width:190px}
+.csa-rd1{left:-34px;top:74px;transform:rotate(-16deg)}.csa-rd2{left:-42px;top:48px;transform:rotate(64deg)}
+.csa-park{position:absolute;left:70px;top:74px;width:52px;height:30px;border-radius:40%;background:#dde9df}
+.csa-me{position:absolute;width:8px;height:8px;border-radius:50%;background:#2d2470;box-shadow:0 0 0 5px rgba(91,69,214,.16)}
+.csa-pin{position:absolute;width:9px;height:9px;border-radius:50%;background:var(--csa-p);border:1.5px solid #fff}
+.csa-p0{background:var(--csa-g);transform:scale(1.3)}
+.csa-fly2{position:absolute;left:192.5px;top:47.5px;width:7px;height:7px;border-radius:50%;background:var(--csa-g);opacity:0;z-index:4}
+.csa-sheet{position:absolute;left:0;right:0;bottom:0;height:58px;background:#fff;border-top:1px solid var(--csa-line);padding:8px}
+.csa-srow{display:flex;gap:7px;align-items:center}
+.csa-sthumb{width:20px;height:20px;border-radius:3px;background:#efe6d6;flex:none}
+
+.csa-prof{padding:10px 8px;text-align:center}
+.csa-av{display:inline-flex;align-items:center;justify-content:center;border-radius:50%;color:#fff;font:700 6.5px system-ui,sans-serif;background:#6a58d8}
+.csa-av.csa-big{width:34px;height:34px;font-size:10.5px}
+.csa-av.csa-sm{width:19px;height:19px;border:1.5px solid #fff}
+.csa-av.csa-xs2{width:13px;height:13px;font-size:5.5px;flex:none}
+.csa-ws{padding:9px 10px}
+.csa-team{position:absolute;left:10px;top:40px;display:flex;gap:3px}
+.csa-slot{width:19px;height:19px;border-radius:50%;border:1px dashed var(--csa-l)}
+.csa-slot.csa-xs3{position:absolute;right:7px;width:13px;height:13px}
+.csa-asg{position:absolute;right:7px}
+.csa-fly3{position:absolute;z-index:4}
+.csa-task{position:absolute;left:8px;right:8px;height:21px;border:1px solid #eceeec;border-radius:3px;display:flex;align-items:center;gap:6px;padding:0 7px;background:#fff}
+.csa-t2{background:var(--csa-pt)}
+.csa-task span{flex:1}
+.csa-free{margin-top:5px;color:var(--csa-g);font-weight:600}
+.csa-plan{position:relative;height:11px}
+.csa-plan span{position:absolute;left:0;top:0;white-space:nowrap}
+.csa-plan .csa-s1{opacity:0}
+.csa-tp{color:var(--csa-p);font-weight:600}
+.csa-seats{position:absolute;right:10px;top:44px;width:56px;height:11px;color:var(--csa-mut)}
+.csa-seats span{position:absolute;right:0;top:0;white-space:nowrap}
+.csa-seats .csa-s1{opacity:0}
+.csa-up{position:absolute;left:6px;right:6px;top:64px;height:80px;background:#fff;border:1px solid var(--csa-line);border-top:2px solid var(--csa-p);border-radius:5px;padding:8px;opacity:0;z-index:3;box-shadow:0 6px 14px -8px rgba(23,24,26,.25)}
+.csa-up .csa-btn{height:18px}
+.csa-cb{width:8px;height:8px;border:1px solid var(--csa-l);border-radius:1.5px;flex:none}
+.csa-done span{color:var(--csa-mut);text-decoration:line-through}
+.csa-done .csa-cb{background:var(--csa-g);border-color:var(--csa-g)}
+
+.csa-mic{position:absolute;left:10px;top:10px;width:24px;height:24px;border-radius:50%;background:var(--csa-p);display:flex;align-items:center;justify-content:center;z-index:2}
+.csa-ring{position:absolute;left:10px;top:10px;width:24px;height:24px;border-radius:50%;border:1px solid var(--csa-p);opacity:0}
+.csa-q{position:absolute;left:42px;top:10px;font-size:11.5px;font-weight:600;white-space:nowrap}
+.csa-st{position:absolute;left:42px;top:26px;width:180px;height:11px}
+.csa-st span{position:absolute;left:0;top:0;white-space:nowrap}
+.csa-st .csa-s1{opacity:0}
+.csa-trow{position:absolute;left:10px;right:10px;height:22px;display:flex;align-items:center;gap:8px;font-size:9.5px;line-height:1.15}
+.csa-ic{width:19px;height:19px;border-radius:4px;background:var(--csa-pt);display:flex;align-items:center;justify-content:center;flex:none}
+.csa-book2{position:absolute;left:10px;bottom:12px;color:#2d2470;font-weight:600;font-size:9.5px}
+
+.csa-form{padding:9px}
+.csa-opt{position:absolute;left:9px;right:9px;height:17px;border:1px solid var(--csa-line);border-radius:3px;display:flex;align-items:center;gap:6px;padding:0 6px;font-weight:600}
+.csa-o1{border-color:var(--csa-p);background:var(--csa-pt)}
+.csa-rad{width:8px;height:8px;border-radius:50%;border:1px solid var(--csa-p);background:#fff}
+.csa-o1 .csa-rad{box-shadow:inset 0 0 0 2.5px var(--csa-p)}
+.csa-doc{padding:8px 10px}
+.csa-ln{position:absolute;left:10px;height:3px;border-radius:1px;background:#e7e9e7}
+.csa-lf{transform-origin:left center}
+.csa-ctl{position:absolute;left:10px;top:63px;font:700 8px ui-monospace,Menlo,Consolas,monospace}
+.csa-slotd{position:absolute;left:8px;right:8px;top:75px;height:28px;border:1px dashed transparent;border-radius:3px;background:var(--csa-pt)}
+.csa-slotd span{position:absolute;inset:0;display:flex;align-items:center;padding:0 6px}
+.csa-ph{font:8px ui-monospace,Menlo,Consolas,monospace;color:var(--csa-mut);opacity:0}
+.csa-fill{font-size:8.5px;font-weight:600;color:#2d2470;line-height:1.2}
+.csa-stamp{position:absolute;left:10px;bottom:9px;font-size:8.5px;font-weight:700;color:var(--csa-g)}
+
+@media (prefers-reduced-motion:no-preference){
+:is(.card:hover,.card:focus-visible,.csa-play) .csa-m1 .csa-scan{animation:csa-k1 8s ease-in-out infinite}
+:is(.card:hover,.card:focus-visible,.csa-play) .csa-m1 .csa-r2{animation:csa-k2 8s ease-in-out infinite}
+:is(.card:hover,.card:focus-visible,.csa-play) .csa-m1 .csa-d2{animation:csa-k3 8s ease-in-out infinite}
+:is(.card:hover,.card:focus-visible,.csa-play) .csa-m1 .csa-hsp{animation:csa-k4 8s ease-in-out infinite}
+:is(.card:hover,.card:focus-visible,.csa-play) .csa-m1 .csa-hst .csa-s1{animation:csa-k5 8s ease-in-out infinite}
+:is(.card:hover,.card:focus-visible,.csa-play) .csa-m1 .csa-hst .csa-s2{animation:csa-k6 8s ease-in-out infinite}
+:is(.card:hover,.card:focus-visible,.csa-play) .csa-m1 .csa-think{animation:csa-k7 8s ease-in-out infinite}
+:is(.card:hover,.card:focus-visible,.csa-play) .csa-m1 .csa-tsp{animation:csa-k8 8s ease-in-out infinite}
+:is(.card:hover,.card:focus-visible,.csa-play) .csa-m1 .csa-sk{animation:csa-k9 8s linear infinite}
+:is(.card:hover,.card:focus-visible,.csa-play) .csa-m1 .csa-sug{animation:csa-k10 8s ease-in-out infinite}
+:is(.card:hover,.card:focus-visible,.csa-play) .csa-m1 .csa-b1{animation:csa-k11 8s ease-in-out infinite}
+:is(.card:hover,.card:focus-visible,.csa-play) .csa-m1 .csa-b1 .csa-s1{animation:csa-k12 8s ease-in-out infinite}
+:is(.card:hover,.card:focus-visible,.csa-play) .csa-m1 .csa-b1 .csa-s2{animation:csa-k13 8s ease-in-out infinite}
+:is(.card:hover,.card:focus-visible,.csa-play) .csa-m2 .csa-tog{animation:csa-k14 8s ease-in-out infinite}
+:is(.card:hover,.card:focus-visible,.csa-play) .csa-m2 .csa-tog i{animation:csa-k15 8s ease-in-out infinite}
+:is(.card:hover,.card:focus-visible,.csa-play) .csa-m2 .csa-fly2{animation:csa-k16 8s cubic-bezier(.5,0,.3,1) infinite}
+:is(.card:hover,.card:focus-visible,.csa-play) .csa-m2 .csa-p0{animation:csa-k17 8s ease-in-out infinite}
+:is(.card:hover,.card:focus-visible,.csa-play) .csa-m2 .csa-pn0{animation:csa-k18 8s ease-in-out infinite}
+:is(.card:hover,.card:focus-visible,.csa-play) .csa-m2 .csa-pn1{animation:csa-k19 8s ease-in-out infinite}
+:is(.card:hover,.card:focus-visible,.csa-play) .csa-m2 .csa-pn2{animation:csa-k20 8s ease-in-out infinite}
+:is(.card:hover,.card:focus-visible,.csa-play) .csa-m2 .csa-pn3{animation:csa-k21 8s ease-in-out infinite}
+:is(.card:hover,.card:focus-visible,.csa-play) .csa-m2 .csa-pn4{animation:csa-k22 8s ease-in-out infinite}
+:is(.card:hover,.card:focus-visible,.csa-play) .csa-m2 .csa-sheet{animation:csa-k23 8s ease-in-out infinite}
+:is(.card:hover,.card:focus-visible,.csa-play) .csa-m2 .csa-b2{animation:csa-k24 8s ease-in-out infinite}
+:is(.card:hover,.card:focus-visible,.csa-play) .csa-m2 .csa-b2 .csa-s1{animation:csa-k25 8s ease-in-out infinite}
+:is(.card:hover,.card:focus-visible,.csa-play) .csa-m2 .csa-b2 .csa-s2{animation:csa-k26 8s ease-in-out infinite}
+:is(.card:hover,.card:focus-visible,.csa-play) .csa-m2 .csa-cnt .csa-s1{animation:csa-k27 8s ease-in-out infinite}
+:is(.card:hover,.card:focus-visible,.csa-play) .csa-m2 .csa-cnt .csa-s2{animation:csa-k28 8s ease-in-out infinite}
+:is(.card:hover,.card:focus-visible,.csa-play) .csa-m3 .csa-b3{animation:csa-k29 8s ease-in-out infinite}
+:is(.card:hover,.card:focus-visible,.csa-play) .csa-m3 .csa-full{animation:csa-k30 8s ease-in-out infinite}
+:is(.card:hover,.card:focus-visible,.csa-play) .csa-m3 .csa-up{animation:csa-k31 8s ease-in-out infinite}
+:is(.card:hover,.card:focus-visible,.csa-play) .csa-m3 .csa-b3u{animation:csa-k32 8s ease-in-out infinite}
+:is(.card:hover,.card:focus-visible,.csa-play) .csa-m3 .csa-b3u .csa-s1{animation:csa-k33 8s ease-in-out infinite}
+:is(.card:hover,.card:focus-visible,.csa-play) .csa-m3 .csa-b3u .csa-s2{animation:csa-k34 8s ease-in-out infinite}
+:is(.card:hover,.card:focus-visible,.csa-play) .csa-m3 .csa-plan .csa-s1{animation:csa-k35 8s ease-in-out infinite}
+:is(.card:hover,.card:focus-visible,.csa-play) .csa-m3 .csa-plan .csa-s2{animation:csa-k36 8s ease-in-out infinite}
+:is(.card:hover,.card:focus-visible,.csa-play) .csa-m3 .csa-seats .csa-s1{animation:csa-k37 8s ease-in-out infinite}
+:is(.card:hover,.card:focus-visible,.csa-play) .csa-m3 .csa-seats .csa-s2{animation:csa-k38 8s ease-in-out infinite}
+:is(.card:hover,.card:focus-visible,.csa-play) .csa-m3 .csa-fly3{animation:csa-k39 8s cubic-bezier(.5,0,.25,1) infinite}
+:is(.card:hover,.card:focus-visible,.csa-play) .csa-m3 .csa-b3 .csa-s1{animation:csa-k40 8s ease-in-out infinite}
+:is(.card:hover,.card:focus-visible,.csa-play) .csa-m3 .csa-b3 .csa-s2{animation:csa-k41 8s ease-in-out infinite}
+:is(.card:hover,.card:focus-visible,.csa-play) .csa-m3 .csa-asg{animation:csa-k42 8s ease-in-out infinite}
+:is(.card:hover,.card:focus-visible,.csa-play) .csa-m3 .csa-t2{animation:csa-k43 8s ease-in-out infinite}
+:is(.card:hover,.card:focus-visible,.csa-play) .csa-m4 .csa-rg1{animation:csa-k44 8s ease-out infinite}
+:is(.card:hover,.card:focus-visible,.csa-play) .csa-m4 .csa-rg2{animation:csa-k45 8s ease-out infinite}
+:is(.card:hover,.card:focus-visible,.csa-play) .csa-m4 .csa-q{animation:csa-qtype 8s steps(28) infinite}
+:is(.card:hover,.card:focus-visible,.csa-play) .csa-m4 .csa-st{animation:csa-k47 8s ease-in-out infinite}
+:is(.card:hover,.card:focus-visible,.csa-play) .csa-m4 .csa-st .csa-s1{animation:csa-k48 8s ease-in-out infinite}
+:is(.card:hover,.card:focus-visible,.csa-play) .csa-m4 .csa-st .csa-s2{animation:csa-k49 8s ease-in-out infinite}
+:is(.card:hover,.card:focus-visible,.csa-play) .csa-m4 .csa-tr0{animation:csa-k50 8s ease-in-out infinite}
+:is(.card:hover,.card:focus-visible,.csa-play) .csa-m4 .csa-tr1{animation:csa-k51 8s ease-in-out infinite}
+:is(.card:hover,.card:focus-visible,.csa-play) .csa-m4 .csa-tr2{animation:csa-k52 8s ease-in-out infinite}
+:is(.card:hover,.card:focus-visible,.csa-play) .csa-m4 .csa-book2{animation:csa-k53 8s ease-in-out infinite}
+:is(.card:hover,.card:focus-visible,.csa-play) .csa-m4 .csa-b4{animation:csa-k54 8s ease-in-out infinite}
+:is(.card:hover,.card:focus-visible,.csa-play) .csa-m4 .csa-b4 .csa-s1{animation:csa-k55 8s ease-in-out infinite}
+:is(.card:hover,.card:focus-visible,.csa-play) .csa-m4 .csa-b4 .csa-s2{animation:csa-k56 8s ease-in-out infinite}
+:is(.card:hover,.card:focus-visible,.csa-play) .csa-m5 .csa-o1{animation:csa-k57 8s ease-in-out infinite}
+:is(.card:hover,.card:focus-visible,.csa-play) .csa-m5 .csa-o1 .csa-rad{animation:csa-k58 8s ease-in-out infinite}
+:is(.card:hover,.card:focus-visible,.csa-play) .csa-m5 .csa-b5{animation:csa-k59 8s ease-in-out infinite}
+:is(.card:hover,.card:focus-visible,.csa-play) .csa-m5 .csa-b5 .csa-s1{animation:csa-k60 8s ease-in-out infinite}
+:is(.card:hover,.card:focus-visible,.csa-play) .csa-m5 .csa-b5 .csa-s2{animation:csa-k61 8s ease-in-out infinite}
+:is(.card:hover,.card:focus-visible,.csa-play) .csa-m5 .csa-slotd{animation:csa-k62 8s ease-in-out infinite}
+:is(.card:hover,.card:focus-visible,.csa-play) .csa-m5 .csa-ph{animation:csa-k63 8s ease-in-out infinite}
+:is(.card:hover,.card:focus-visible,.csa-play) .csa-m5 .csa-fill{animation:csa-k64 8s ease-in-out infinite}
+:is(.card:hover,.card:focus-visible,.csa-play) .csa-m5 .csa-lf0{animation:csa-k65 8s ease-in-out infinite}
+:is(.card:hover,.card:focus-visible,.csa-play) .csa-m5 .csa-lf1{animation:csa-k66 8s ease-in-out infinite}
+:is(.card:hover,.card:focus-visible,.csa-play) .csa-m5 .csa-lf2{animation:csa-k67 8s ease-in-out infinite}
+:is(.card:hover,.card:focus-visible,.csa-play) .csa-m5 .csa-stamp{animation:csa-k68 8s ease-in-out infinite}
+@keyframes csa-k1{0%{opacity:0;transform:translateY(0)}4%{opacity:1}22%{opacity:1;transform:translateY(48px)}27%{opacity:1;transform:translateY(24px)}31%,100%{opacity:0;transform:translateY(24px)}}
+@keyframes csa-k2{0%,27%{background:#fff}31%,100%{background:var(--csa-at)}}
+@keyframes csa-k3{0%,27%{color:var(--csa-mut);font-weight:400}31%,100%{color:#8a5a12;font-weight:700}}
+@keyframes csa-k4{0%{transform:rotate(0) scale(1)}10%{transform:rotate(45deg) scale(.8)}20%{transform:rotate(90deg) scale(1)}30%{transform:rotate(135deg) scale(.8)}40%{transform:rotate(180deg) scale(1)}46%,100%{transform:rotate(180deg) scale(1)}}
+@keyframes csa-k5{0%,46%{opacity:1}47.5%,100%{opacity:0}}
+@keyframes csa-k6{0%,46%{opacity:0}47.5%,100%{opacity:1}}
+@keyframes csa-k7{0%,30%{opacity:0}33%,44%{opacity:1}47%,100%{opacity:0}}
+@keyframes csa-k8{0%,32%{transform:scale(1) rotate(0)}36%{transform:scale(.7) rotate(45deg)}40%{transform:scale(1) rotate(90deg)}44%,100%{transform:scale(.7) rotate(135deg)}}
+@keyframes csa-k9{0%,32%{background-position:100% 0}44%,100%{background-position:-100% 0}}
+@keyframes csa-k10{0%,45%{opacity:0;transform:translateY(6px)}52%,100%{opacity:1;transform:none}}
+@keyframes csa-k11{0%,67%{transform:none}68%{transform:scale(.93)}70%,100%{transform:none}}
+@keyframes csa-k12{0%,68.5%{opacity:1}70.0%,100%{opacity:0}}
+@keyframes csa-k13{0%,68.5%{opacity:0}70.0%,100%{opacity:1}}
+@keyframes csa-k14{0%,12%{background:#d6d9d6}15%,100%{background:var(--csa-g)}}
+@keyframes csa-k15{0%,12%{transform:none}15%,100%{transform:translateX(10px)}}
+@keyframes csa-k16{0%,16%{opacity:0;transform:translate(-111px,51px)}17%{opacity:1;transform:translate(-111px,51px)}26%{opacity:1;transform:none}27%,100%{opacity:0;transform:none}}
+@keyframes csa-k17{0%,26%{opacity:0;transform:translateY(-8px)}30%{opacity:1;transform:none;background:var(--csa-p)}50%{transform:none;background:var(--csa-p)}54%,100%{opacity:1;transform:scale(1.3);background:var(--csa-g)}}
+@keyframes csa-k18{0%,31.0%{opacity:0;transform:scale(0)}34.0%,100%{opacity:1;transform:none}}
+@keyframes csa-k19{0%,33.4%{opacity:0;transform:scale(0)}36.4%,100%{opacity:1;transform:none}}
+@keyframes csa-k20{0%,35.8%{opacity:0;transform:scale(0)}38.8%,100%{opacity:1;transform:none}}
+@keyframes csa-k21{0%,38.2%{opacity:0;transform:scale(0)}41.2%,100%{opacity:1;transform:none}}
+@keyframes csa-k22{0%,40.6%{opacity:0;transform:scale(0)}43.6%,100%{opacity:1;transform:none}}
+@keyframes csa-k23{0%,46%{opacity:0;transform:translateY(46px)}54%,100%{opacity:1;transform:none}}
+@keyframes csa-k24{0%,65%{transform:none}66%{transform:scale(.93)}68%,100%{transform:none}}
+@keyframes csa-k25{0%,66.5%{opacity:1}68.0%,100%{opacity:0}}
+@keyframes csa-k26{0%,66.5%{opacity:0}68.0%,100%{opacity:1}}
+@keyframes csa-k27{0%,72%{opacity:1}73.5%,100%{opacity:0}}
+@keyframes csa-k28{0%,72%{opacity:0}73.5%,100%{opacity:1}}
+@keyframes csa-k29{0%,13%{transform:none}14%{transform:scale(.93)}16%,100%{transform:none}}
+@keyframes csa-k30{0%,15%{color:var(--csa-mut);font-weight:400}18%,100%{color:#8a5a12;font-weight:700}}
+@keyframes csa-k31{0%,17%{opacity:0;transform:translateY(8px)}23%,40%{opacity:1;transform:none}44%,100%{opacity:0;transform:translateY(4px)}}
+@keyframes csa-k32{0%,32%{transform:none}33%{transform:scale(.93)}35%,100%{transform:none}}
+@keyframes csa-k33{0%,33.5%{opacity:1}35.0%,100%{opacity:0}}
+@keyframes csa-k34{0%,33.5%{opacity:0}35.0%,100%{opacity:1}}
+@keyframes csa-k35{0%,42%{opacity:1}43.5%,100%{opacity:0}}
+@keyframes csa-k36{0%,42%{opacity:0}43.5%,100%{opacity:1}}
+@keyframes csa-k37{0%,56%{opacity:1}57.5%,100%{opacity:0}}
+@keyframes csa-k38{0%,56%{opacity:0}57.5%,100%{opacity:1}}
+@keyframes csa-k39{0%,44%{transform:translate(-121px,-9px) scale(1.79);opacity:0}45%{opacity:1;transform:translate(-121px,-9px) scale(1.79)}56%,100%{opacity:1;transform:none}}
+@keyframes csa-k40{0%,56%{opacity:1}57.5%,100%{opacity:0}}
+@keyframes csa-k41{0%,56%{opacity:0}57.5%,100%{opacity:1}}
+@keyframes csa-k42{0%,64%{opacity:0;transform:scale(.4)}69%,100%{opacity:1;transform:none}}
+@keyframes csa-k43{0%,61%{background:#fff}65%,100%{background:var(--csa-pt)}}
+@keyframes csa-k44{0%{opacity:.5;transform:scale(1)}9%{opacity:0;transform:scale(1.7)}9.1%{opacity:.5;transform:scale(1)}18%{opacity:0;transform:scale(1.7)}18.1%{opacity:.5;transform:scale(1)}27%{opacity:0;transform:scale(1.7)}27.1%,100%{opacity:0;transform:scale(1)}}
+@keyframes csa-k45{0%,4%{opacity:0}4.1%{opacity:.5;transform:scale(1)}13%{opacity:0;transform:scale(1.7)}13.1%{opacity:.5;transform:scale(1)}22%{opacity:0;transform:scale(1.7)}22.1%{opacity:.5;transform:scale(1)}31%{opacity:0;transform:scale(1.7)}31.1%,100%{opacity:0;transform:scale(1)}}
+@keyframes csa-qtype{0%,3%{clip-path:inset(0 100% 0 0)}27%,100%{clip-path:inset(0 0 0 0)}}
+@keyframes csa-k47{0%,30%{opacity:0;transform:translateY(0px)}33%,100%{opacity:1;transform:none}}
+@keyframes csa-k48{0%,50%{opacity:1}51.5%,100%{opacity:0}}
+@keyframes csa-k49{0%,50%{opacity:0}51.5%,100%{opacity:1}}
+@keyframes csa-k50{0%,34%{opacity:0;transform:translateY(6px)}39%,100%{opacity:1;transform:none}}
+@keyframes csa-k51{0%,39%{opacity:0;transform:translateY(6px)}44%,100%{opacity:1;transform:none}}
+@keyframes csa-k52{0%,44%{opacity:0;transform:translateY(6px)}49%,100%{opacity:1;transform:none}}
+@keyframes csa-k53{0%,58%{opacity:0;transform:translateY(4px)}62%,100%{opacity:1;transform:none}}
+@keyframes csa-k54{0%,66%{transform:none}67%{transform:scale(.93)}69%,100%{transform:none}}
+@keyframes csa-k55{0%,67.5%{opacity:1}69.0%,100%{opacity:0}}
+@keyframes csa-k56{0%,67.5%{opacity:0}69.0%,100%{opacity:1}}
+@keyframes csa-k57{0%,12%{border-color:var(--csa-line);background:#fff}15%,100%{border-color:var(--csa-p);background:var(--csa-pt)}}
+@keyframes csa-k58{0%,12%{box-shadow:inset 0 0 0 0 var(--csa-p)}15%,100%{box-shadow:inset 0 0 0 2.5px var(--csa-p)}}
+@keyframes csa-k59{0%,27%{transform:none}28%{transform:scale(.93)}30%,100%{transform:none}}
+@keyframes csa-k60{0%,28.5%{opacity:1}30.0%,100%{opacity:0}}
+@keyframes csa-k61{0%,28.5%{opacity:0}30.0%,100%{opacity:1}}
+@keyframes csa-k62{0%,34%{border-color:var(--csa-l);background:#fff}40%,100%{border-color:transparent;background:var(--csa-pt)}}
+@keyframes csa-k63{0%,36%{opacity:1}37.5%,100%{opacity:0}}
+@keyframes csa-k64{0%,36%{opacity:0}37.5%,100%{opacity:1}}
+@keyframes csa-k65{0%,46%{transform:scaleX(0)}51%,100%{transform:scaleX(1)}}
+@keyframes csa-k66{0%,50%{transform:scaleX(0)}55%,100%{transform:scaleX(1)}}
+@keyframes csa-k67{0%,54%{transform:scaleX(0)}59%,100%{transform:scaleX(1)}}
+@keyframes csa-k68{0%,66%{opacity:0;transform:translateY(0px)}72%,100%{opacity:1;transform:none}}
+}
